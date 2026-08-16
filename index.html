@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pazi Sad | Analiza, Logika i Filozofija</title>
-  <meta name="description" content="Zvanični sajt Pazi Sad kanala. Analitičke i edukativne epizode o nauci, tehnologiji i filozofiji.">
+  <meta name="description" content="Zvanični sajt Pazi Sad kanala. Analitičke i edukativne epizode o nauci, tehnologiji, logici i filozofiji.">
 
   <!-- ========================================== -->
   <!-- GOOGLE VIDEOOBJECT SCHEMA (SEO SKRIPTA)    -->
   <!-- ========================================== -->
   
-  <!-- Skripta za video: Kvantni Računari -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,11 +47,17 @@
 
   <style>
     :root {
-      --bg-color: #0f0f11;
-      --card-bg: #1a1a1e;
-      --accent-color: #ff3e3e;
+      --bg-color: #0d0e12;
+      --card-bg: #16181f;
+      --accent-orange: #ff9100;
+      --accent-red: #ff3e3e;
       --text-main: #ffffff;
-      --text-muted: #a0a0a8;
+      --text-muted: #a0a5b5;
+      --border-color: #262936;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -64,35 +69,150 @@
       line-height: 1.6;
     }
 
-    header {
-      background-color: #151518;
-      padding: 2rem 1rem;
-      text-align: center;
-      border-bottom: 1px solid #2a2a30;
+    /* Navigacija */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(13, 14, 18, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+      padding: 1rem 0;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.2rem;
       color: var(--text-main);
-      letter-spacing: -0.5px;
+      text-decoration: none;
     }
 
-    header h1 span {
-      color: var(--accent-color);
+    .nav-logo span {
+      color: var(--accent-orange);
     }
 
-    header p {
-      margin-top: 0.5rem;
+    .nav-links a {
       color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+      transition: color 0.2s;
     }
 
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* Hero / Ulazna tačka sa Logotipom */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: radial-gradient(circle at top, #1e2230 0%, var(--bg-color) 70%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 145, 0, 0.2);
+      border: 2px solid var(--border-color);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.03);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin: 10px 0;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--accent-orange);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* Odeljci */
     .container {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 0 auto;
       padding: 0 20px;
     }
 
+    .section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent-orange);
+      border-radius: 2px;
+    }
+
+    /* O Kanalu */
+    .about-content {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      font-size: 1.05rem;
+      color: #d1d5e0;
+    }
+
+    .about-content p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .btn-youtube {
+      display: inline-block;
+      background-color: var(--accent-red);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-youtube:hover {
+      background-color: #e03232;
+    }
+
+    /* Videi Grid */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -103,12 +223,13 @@
       background-color: var(--card-bg);
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #2a2a30;
-      transition: transform 0.2s ease;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .video-card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
     .responsive-iframe {
@@ -131,7 +252,7 @@
       padding: 20px;
     }
 
-    .card-content h2 {
+    .card-content h3 {
       font-size: 1.2rem;
       margin-top: 0;
       margin-bottom: 10px;
@@ -144,38 +265,76 @@
       margin: 0;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 40px 0;
       color: var(--text-muted);
       font-size: 0.9rem;
-      border-top: 1px solid #2a2a30;
-      margin-top: 60px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Navigacija -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Pazi <span>Sad</span></a>
+      <div class="nav-links">
+        <a href="#o-kanalu">O kanalu</a>
+        <a href="#videi">Videi</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Ulazna Tačka sa Logotipom -->
+  <header class="hero">
+    <img src="logo.png" alt="Pazi Sad Logo" class="logo-img">
     <h1>Pazi <span>Sad</span></h1>
-    <p>Edukativne analize, filozofija, nauka i koncepti</p>
+    <p>Edukativne analize, filozofija, nauka, tehnologija i teorijski koncepti.</p>
   </header>
 
   <div class="container">
-    <div class="video-grid">
 
-      <!-- Epizoda: Kvantni Računari -->
-      <article class="video-card">
-        <div class="responsive-iframe">
-          <iframe src="https://www.youtube.com/embed/4q17W4Dj-Hs" allowfullscreen></iframe>
-        </div>
-        <div class="card-content">
-          <h2>Kvantni Računari: Kako menjaju budućnost tehnologije?</h2>
-          <p>U ovom videu analiziramo osnovne principe kvantnog računarstva, koncept kubita, superpozicije i potencijal ove tehnologije za rešavanje složenih problema.</p>
-        </div>
-      </article>
+    <!-- Odeljak: O Kanalu -->
+    <section id="o-kanalu" class="section">
+      <h2 class="section-title">O kanalu</h2>
+      <div class="about-content">
+        <p>
+          <strong>Pazi Sad</strong> je edukativno-analitički kanal posvećen raščlanjivanju kompleksnih ideja, naučnih i tehnoloških proboja, matematičke logike, filozofskih dilema i društvenih fenomena.
+        </p>
+        <p>
+          Naš cilj je da kroz strukturisana objašnjenja i duboke diskusije približimo apstraktne i teške koncepte na pristupačan i vizuelno zanimljiv način.
+        </p>
+        <a href="https://www.youtube.com/@pazisad" target="_blank" class="btn-youtube">
+          Zaprati kanal na YouTube-u
+        </a>
+      </div>
+    </section>
 
-    </div>
+    <!-- Odeljak: Videi -->
+    <section id="videi" class="section">
+      <h2 class="section-title">Videi</h2>
+      <div class="video-grid">
+
+        <!-- Epizoda: Kvantni Računari -->
+        <article class="video-card">
+          <div class="responsive-iframe">
+            <iframe src="https://www.youtube.com/embed/4q17W4Dj-Hs" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="card-content">
+            <h3>Kvantni Računari: Kako menjaju budućnost tehnologije?</h3>
+            <p>Detaljna analiza osnovnih principa kvantnog računarstva, koncepta kubita, superpozicije i potencijala ove tehnologije za rešavanje složenih problema.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
   </div>
 
   <footer>
