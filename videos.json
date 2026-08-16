@@ -1,0 +1,25 @@
+[
+  {
+    "id": "4q17W4Dj-Hs",
+    "title": "Kvantni Računari: Kako menjaju budućnost tehnologije?",
+    "description": "Detaljna analiza kvantnog računarstva, kubita, superpozicije i praktične primene kvantne tehnologije.",
+    "uploadDate": "2026-08-16T20:00:00+02:00",
+    "chapters": [
+      {
+        "name": "Uvod u kvantno računarstvo",
+        "startOffset": 0,
+        "endOffset": 90
+      },
+      {
+        "name": "Razlika između bitova i kubita (Qubits)",
+        "startOffset": 91,
+        "endOffset": 300
+      },
+      {
+        "name": "Superpozicija i kvantno preplitanje",
+        "startOffset": 301,
+        "endOffset": 600
+      }
+    ]
+  }
+]
