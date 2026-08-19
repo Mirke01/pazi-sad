@@ -228,3 +228,84 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
+/* ==========================================================================
+   1. Navigacija - Pomeranje skroz do ivica ekrana
+   ========================================================================== */
+.nav-container {
+  max-width: 100% !important; /* Ukida ograničenje od 1000px za navigaciju */
+  padding: 0 40px !important;  /* Daje blagi razmak od samih ivica ekrana */
+}
+
+/* ==========================================================================
+   2. Tech Grid Mesh - Mrežasta naučna pozadina
+   ========================================================================== */
+body {
+  background-color: var(--bg-color);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 35px 35px;
+  background-position: center center;
+}
+
+/* ==========================================================================
+   3. Dinamički Ambient Glow (Animacija sjaja u Hero sekciji)
+   ========================================================================== */
+@keyframes ambientPulse {
+  0% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 145, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 55px rgba(255, 145, 0, 0.45);
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 145, 0, 0.2);
+  }
+}
+
+.logo-img {
+  animation: ambientPulse 4s infinite ease-in-out;
+}
+
+.hero h1 span {
+  text-shadow: 0 0 20px rgba(255, 145, 0, 0.4);
+}
+
+/* ==========================================================================
+   4. Glassmorphism & Gradijentne ivice na karticama
+   ========================================================================== */
+.video-card {
+  background: rgba(22, 24, 31, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 145, 0, 0.5) !important;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(255, 145, 0, 0.2);
+}
+
+/* ==========================================================================
+   5. Polirani okvir oko video plejera (Player Frame)
+   ========================================================================== */
+.responsive-iframe {
+  border-bottom: 1px solid var(--border-color);
+  background: #000;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.responsive-iframe iframe {
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.video-card:hover .responsive-iframe iframe {
+  opacity: 1;
+}
