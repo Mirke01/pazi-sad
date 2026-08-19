@@ -25,7 +25,24 @@
   {
     "id": "uhl5F2NoxJc",
     "title": "Kako bi izgledao jedan dan u 2050. godini?",
-    "description": "Budućnost stiže brže nego što mislimo. 🚀Zamisli da se budiš u svetu u 2050. godini. Evo kako bi jedan dan u toj (ne)bliskoj budućnosti mogao da izgleda ako se sve karte poklope..",
+    "description": "Budućnost stiže brže nego što mislimo. 🚀 Zamisli da se budiš u svetu u 2050. godini. Evo kako bi jedan dan u toj (ne)bliskoj budućnosti mogao da izgleda ako se sve karte poklope..",
     "uploadDate": "2026-08-19T20:00:00+02:00",
+    "chapters": [
+      {
+        "name": "Jutro u 2050. i pametni domovi",
+        "startOffset": 0,
+        "endOffset": 180
+      },
+      {
+        "name": "Tehnologija, AI i posao budućnosti",
+        "startOffset": 181,
+        "endOffset": 450
+      },
+      {
+        "name": "Svet i energija 2050.",
+        "startOffset": 451,
+        "endOffset": 720
+      }
+    ]
   }
 ]
